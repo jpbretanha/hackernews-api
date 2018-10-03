@@ -1,0 +1,180 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-10-03T00:18:55.551Z",
+	"__export_source": "insomnia.desktop.app:v6.0.2",
+	"resources": [
+		{
+			"_id": "wrk_8d28c4116e0144b9baba6941ce7ec394",
+			"created": 1538523361642,
+			"description": "",
+			"modified": 1538523361642,
+			"name": "Hackernews GraphQL",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_7a2e934b5bd244bf820ac6c624cb9556",
+			"color": null,
+			"created": 1538523361664,
+			"data": {
+				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjam1zZGg2cWkwMDEzMGE2MnZlNDNxc3poIiwiaWF0IjoxNTM4NTI0ODQ4fQ.PCjff0e63RA82sCmsFtea0zS50ko666YrSjcGLMO3rY"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1538523361664,
+			"modified": 1538524942849,
+			"name": "New Environment",
+			"parentId": "wrk_8d28c4116e0144b9baba6941ce7ec394",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_8a0f910562c54a928369ff6b2eee0c82",
+			"cookies": [],
+			"created": 1538523361665,
+			"modified": 1538523361665,
+			"name": "Default Jar",
+			"parentId": "wrk_8d28c4116e0144b9baba6941ce7ec394",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_1966b195ad004401a3cd3d9d789231ee",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation ($email: String!, $password: String!) {\\n  login(email: $email, password: $password){\\n\\t\\tuser {\\n\\t\\t\\tid\\n\\t\\t\\tname\\n\\t\\t},\\n\\t\\ttoken\\n\\t}\\n}\\n\",\"variables\":{\"email\":\"victor@thrivedatascience.com\",\"password\":\"123123123\"}}"
+			},
+			"created": 1538523390232,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_6a2855f0881f487aa7b2906c08bfb8b4",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1538523390232,
+			"method": "POST",
+			"modified": 1538524979413,
+			"name": "Login",
+			"parameters": [],
+			"parentId": "wrk_8d28c4116e0144b9baba6941ce7ec394",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:4000",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c1eb0b6a00b94fd0b911f157957fce9d",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation ($name: String!, $email: String!, $password: String!) {\\n  signup(name: $name, email: $email, password: $password){\\n\\t\\tuser {\\n\\t\\t\\tid\\n\\t\\t\\tname\\n\\t\\t},\\n\\t\\ttoken\\n\\t}\\n}\\n\",\"variables\":{\"name\":\"Victor\",\"email\":\"victor@thrivedatascience.com\",\"password\":\"123123123\"}}"
+			},
+			"created": 1538523924536,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_6a2855f0881f487aa7b2906c08bfb8b4",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1534883801273,
+			"method": "POST",
+			"modified": 1538524864554,
+			"name": "Create User",
+			"parameters": [],
+			"parentId": "wrk_8d28c4116e0144b9baba6941ce7ec394",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:4000",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b313c4a7bfe84897bf810c85bed7a86e",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation ($url: String!, $description: String!) {\\n  post(url: $url, description: $description){\\n\\t\\tid\\n\\t\\turl\\n\\t\\tpostedBy {\\n\\t\\t\\tid\\n\\t\\t\\tlinks {\\n\\t\\t\\t\\tid\\n\\t\\t\\t}\\n\\t\\t}\\n\\t}\\n\\n}\\n\",\"variables\":{\"url\":\"http://nave.rs\",\"description\":\"this is a website\"}}"
+			},
+			"created": 1538524214911,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_6a2855f0881f487aa7b2906c08bfb8b4",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_ef3b223054604bd1b389e3a31df5626b",
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1533064006793.5,
+			"method": "POST",
+			"modified": 1538525415234,
+			"name": "Create  Post",
+			"parameters": [],
+			"parentId": "wrk_8d28c4116e0144b9baba6941ce7ec394",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:4000",
+			"_type": "request"
+		},
+		{
+			"_id": "req_61bf05325d1747dc8cbe911e99665d40",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query {\\n\\tfeed {\\n\\t\\tlinks {\\n\\t\\t\\tid\\n\\t\\t\\tdescription\\n\\t\\t\\tvotes {\\n\\t\\t\\t\\tuser {\\n\\t\\t\\t\\t\\tname\\n\\t\\t\\t\\t}\\n\\t\\t\\t}\\n\\t\\t\\tpostedBy {\\n\\t\\t\\t\\tname\\n\\t\\t\\t}\\n\\t\\t}\\n\\t}\\n}\\n\"}"
+			},
+			"created": 1538525463469,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_6a2855f0881f487aa7b2906c08bfb8b4",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_ef3b223054604bd1b389e3a31df5626b",
+					"name": "Authorization",
+					"value": "{{token}}"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1532154109553.75,
+			"method": "POST",
+			"modified": 1538525705928,
+			"name": "List all posts",
+			"parameters": [],
+			"parentId": "wrk_8d28c4116e0144b9baba6941ce7ec394",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "localhost:4000",
+			"_type": "request"
+		}
+	]
+}
